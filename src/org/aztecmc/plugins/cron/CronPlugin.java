@@ -1,13 +1,15 @@
 package org.aztecmc.plugins.cron;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.*;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class CronPlugin extends JavaPlugin {
 
@@ -55,8 +57,29 @@ public class CronPlugin extends JavaPlugin {
         bukkitRunnable.runTaskTimer(this, 0L,
                 getConfig().getLong("bukkitRunnable-poll-resolution", 20L));
     }
+    
+    public boolean onCommand​(CommandSender sender, Command command, java.lang.String label, java.lang.String[] args) {
+        if(command.getName().equalsIgnoreCase("cron")){//no other commands should be registered, but just to be sure...
+            if(args.length > 0) {
+                if(args[0].equalsIgnoreCase("reload")) {
+                    if (sender instanceof Player) {
+                        Player player = (Player) sender;
+                        if(!player.hasPermission("cron.reload"))
+                            return false;
+                    }
+                    reloadConfig();
+                    wireCrons();
+                    log("Crons reloaded");
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
 
     private void register() {
+        /*
         this.getCommand("cron").setExecutor((commandSender, command, label, strings) -> {
             if(strings.length > 0) {
                 if(strings[0].equalsIgnoreCase("reload")) {
@@ -72,7 +95,7 @@ public class CronPlugin extends JavaPlugin {
                 }
             }
             return false;
-        });
+        });*/
     }
 
     @Override

@@ -68,7 +68,7 @@ public class CronDef {
                 break;
             cronDef.advanceNext(now);
             for (String command : cronDef.commands)
-                commandDispatcher.accept(new Pair(cronDef, command));
+                commandDispatcher.accept(new Pair<>(cronDef, command));
         }
     }
 

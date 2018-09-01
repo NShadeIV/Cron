@@ -57,7 +57,7 @@ public class CronPlugin extends JavaPlugin {
     }
     
     @Override
-    public boolean onCommand​(CommandSender sender, Command command, java.lang.String label, java.lang.String[] args) {
+    public boolean onCommand​(CommandSender sender, Command command, String label, String[] args) {
         if(command.getName().equalsIgnoreCase("cron")){//no other commands should be registered, but just to be sure...
             if(args.length > 0) {
                 if(args[0].equalsIgnoreCase("reload")) {

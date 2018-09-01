@@ -56,6 +56,7 @@ public class CronPlugin extends JavaPlugin {
                 getConfig().getLong("bukkitRunnable-poll-resolution", 20L));
     }
     
+    @Override
     public boolean onCommand​(CommandSender sender, Command command, java.lang.String label, java.lang.String[] args) {
         if(command.getName().equalsIgnoreCase("cron")){//no other commands should be registered, but just to be sure...
             if(args.length > 0) {

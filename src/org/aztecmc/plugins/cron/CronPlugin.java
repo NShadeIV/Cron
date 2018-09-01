@@ -18,8 +18,6 @@ public class CronPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
-
-        register();
         log("Plugin loaded");
 
         wireCrons();
@@ -75,27 +73,6 @@ public class CronPlugin extends JavaPlugin {
             }
         }
         return false;
-    }
-    
-
-    private void register() {
-        /*
-        this.getCommand("cron").setExecutor((commandSender, command, label, strings) -> {
-            if(strings.length > 0) {
-                if(strings[0].equalsIgnoreCase("reload")) {
-                    if (commandSender instanceof Player) {
-                        Player player = (Player)commandSender;
-                        if(!player.hasPermission("cron.reload"))
-                            return false;
-                    }
-                    reloadConfig();
-                    wireCrons();
-                    log("Crons reloaded");
-                    return true;
-                }
-            }
-            return false;
-        });*/
     }
 
     @Override

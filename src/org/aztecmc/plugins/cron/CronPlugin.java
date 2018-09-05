@@ -68,7 +68,7 @@ public class CronPlugin extends JavaPlugin {
                     }
                     reloadConfig();
                     wireCrons();
-                    log("Crons reloaded");
+                    sender.sendMessage("Crons reloaded.");//if the console sent the message, this will log to console also
                     return true;
                 }
             }

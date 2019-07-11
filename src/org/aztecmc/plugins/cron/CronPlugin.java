@@ -25,7 +25,7 @@ public class CronPlugin extends JavaPlugin {
     }
 
     private void wireCrons() {
-        final String timezone = getConfig().getString("bukkitRunnable-timezone", "America/Los_Angeles");
+        final String timezone = getConfig().getString("cron-timezone", "America/Los_Angeles");
         final List<CronDef> cronDefs = CronDef.getFromConfig(
                 timezone,
                 getConfig().getMapList("crons"),
@@ -53,7 +53,7 @@ public class CronPlugin extends JavaPlugin {
             }
         };
         bukkitRunnable.runTaskTimer(this, 0L,
-                getConfig().getLong("bukkitRunnable-poll-resolution", 20L));
+                getConfig().getLong("cron-poll-resolution", 20L));
     }
     
     @Override

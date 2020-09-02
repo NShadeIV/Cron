@@ -2,6 +2,7 @@ name: CronPlugin
 version: 0.0.3
 author: AztecMC
 main: org.aztecmc.plugins.cron.CronPlugin
+api-version: 1.13
 commands:
   cron:
     description: reload the config and crons

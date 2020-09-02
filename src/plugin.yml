@@ -1,5 +1,5 @@
 name: CronPlugin
-version: 0.0.1
+version: 0.0.3
 author: AztecMC
 main: org.aztecmc.plugins.cron.CronPlugin
 commands:

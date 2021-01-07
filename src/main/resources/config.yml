@@ -1,0 +1,9 @@
+cron-poll-resolution: 600
+cron-timezone: "US/Eastern"
+crons:
+- name: Purge CoreProtect
+  time: T00:30
+  period: PT8H
+  commands:
+  - 'co purge t:72h'
+  - 'helpop purging coreprotect'

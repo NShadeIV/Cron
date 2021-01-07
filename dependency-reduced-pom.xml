@@ -131,6 +131,12 @@
                   <include>joda-time:joda-time:jar:</include>
                 </includes>
               </artifactSet>
+              <relocations>
+                <relocation>
+                  <pattern>org.joda.time</pattern>
+                  <shadedPattern>org.aztecmc.plugins.cron.joda-time</shadedPattern>
+                </relocation>
+              </relocations>
             </configuration>
           </execution>
         </executions>

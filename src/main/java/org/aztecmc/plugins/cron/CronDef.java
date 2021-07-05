@@ -1,6 +1,6 @@
 package org.aztecmc.plugins.cron;
 
-import javafx.util.Pair;
+import org.aztecmc.plugins.cron.util.Pair;
 import org.joda.time.*;
 
 import java.io.PrintWriter;
